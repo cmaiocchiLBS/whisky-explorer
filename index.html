@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#20372c">
+  <meta name="description" content="Explore whiskies with flavour profiles close to your favourite.">
+  <title>Whisky Explorer — Find a flavour neighbour</title>
+  <link rel="icon" href="./favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="./styles.css">
+  <script src="./app.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <a class="wordmark" href="./" aria-label="Whisky Explorer home">
+      <span class="wordmark-seal" aria-hidden="true">W</span>
+      <span>Whisky <strong>Explorer</strong></span>
+    </a>
+    <p class="header-note">A flavour-led guide to Scotch whisky</p>
+  </header>
+
+  <main>
+    <section class="hero" aria-labelledby="page-title">
+      <div class="hero-inner">
+        <div class="hero-copy">
+          <p class="eyebrow"><span class="eyebrow-line"></span> YOUR NEXT POUR, FOUND</p>
+          <h1 id="page-title">A familiar note.<br><em>A new discovery.</em></h1>
+          <p class="hero-intro">Choose a whisky you enjoy. We’ll find up to three others with the closest recorded flavour profiles.</p>
+          <div class="hero-facts" aria-label="About the guide">
+            <span><b>86</b> distillery profiles</span>
+            <span><b>12</b> flavour characteristics</span>
+          </div>
+        </div>
+
+        <form class="selection-panel" id="whisky-form">
+          <p class="panel-kicker">START WITH A FAVOURITE</p>
+          <label for="whisky-select">Which whisky should we start from?</label>
+          <select id="whisky-select" name="whisky" required disabled>
+            <option value="">Loading whiskies…</option>
+          </select>
+          <button class="button tartan-button" id="find-button" type="submit" disabled>
+            <span>Find my flavour matches</span><span class="button-arrow" aria-hidden="true">↗</span>
+          </button>
+          <p class="panel-footnote" id="data-status" aria-live="polite">Loading the checked workshop list…</p>
+        </form>
+      </div>
+      <div class="hero-rule" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span></div>
+    </section>
+
+    <section class="results-wrap" id="results" aria-live="polite" aria-busy="true">
+      <div class="empty-state" id="empty-state">
+        <div class="empty-mark" aria-hidden="true">✳</div>
+        <p class="eyebrow">A GOOD PLACE TO BEGIN</p>
+        <h2>Your next favourite might be one choice away.</h2>
+        <p>Select a whisky above to see other distilleries with similar recorded flavour scores.</p>
+      </div>
+      <div id="results-content" hidden></div>
+    </section>
+
+    <section class="how-it-works" aria-labelledby="how-title">
+      <div class="how-icon" aria-hidden="true">12</div>
+      <div>
+        <p class="eyebrow">A LITTLE ABOUT THE MATCH</p>
+        <h2 id="how-title">Similar notes, not a promise.</h2>
+        <p>We compare all twelve recorded flavour scores, giving each characteristic a fair say by accounting for how much it varies across this list. We only look within the same flavour group as your choice; place does not affect recommendations. A similar recorded profile can be a useful starting point, but it cannot guarantee you’ll enjoy the whisky.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <span>WHISKY EXPLORER</span>
+    <span>Made for curious palates</span>
+  </footer>
+</body>
+</html>
